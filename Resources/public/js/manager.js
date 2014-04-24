@@ -118,7 +118,7 @@
         });
 
         $('.arcana-separate-contents-btn').click(function () {
-            manager.openPopup();
+            manager.openSeparateEditor();
         });
     });
 })(jQuery);
