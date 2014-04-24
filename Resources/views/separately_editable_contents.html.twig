@@ -1,0 +1,8 @@
+<div id="arcana_separate_contents" style="display: none" title="Separately editable contents on this page">
+    {% for content in contents %}
+        <div class="panel panel-default">
+            <div class="panel-heading">{{ content.entity.name }}</div>
+            <div class="panel-body" data-content="{{ content.options.type }}" data-content-id="{{ content.entity.id }}"><s></s>{{ content.entity.text | raw }}</div>
+        </div>
+    {% endfor %}
+</div>

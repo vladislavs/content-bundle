@@ -1,0 +1,25 @@
+{
+    "name": "arcanacode/content-bundle",
+    "type": "symfony-bundle",
+    "description": "This bundle provides localized content management",
+    "keywords": ["arcana", "content", "bundle", "symfony", "twig"],
+    "homepage": "http://github.com/arcanacode/content-bundle",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Ivo Azirjans",
+            "email": "ivo.azirjans@gmail.com"
+        }
+    ],
+    "require": {
+        "php":                      ">=5.3.3",
+        "symfony/framework-bundle": "~2.4",
+        "doctrine/orm": "~2.2,>=2.2.3",
+        "jms/di-extra-bundle": "~1.4"
+    },
+    "autoload": {
+        "psr-0": { "Arcana\\Bundle\\ContentBundle": "" }
+    },
+    "target-dir": "Arcana/Bundle/ContentBundle"
+}
