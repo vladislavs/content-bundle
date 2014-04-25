@@ -46,7 +46,8 @@ class ContentManager
 
         foreach ($contents as $content) {
             $sanitizedText = str_replace('<s></s>', '', $texts[$content->getId()]);
-            if(!empty(strip_tags($sanitizedText))){
+            $strippedText = strip_tags($sanitizedText);
+            if(!empty($strippedText)){
                 $content->setText($sanitizedText);
             }else{
                 $this->emptyVals[] = $content->getId();
