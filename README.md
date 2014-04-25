@@ -121,12 +121,9 @@ You can also use large text blocks (also with html tags) without using a default
 <pre>
 
 {% content of "facts_text" %}
-    <h1>This is the main heading</h1>
-    <div id="main-wrapper">
-        <p>
+   
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus massa et dui tempor facilisis. In a luctus erat. Morbi eget tellus fermentum, pretium arcu sed, congue arcu. 
-        </p>
-    </div>
+       
 {% endcontent %}
 
 </pre>
