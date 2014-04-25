@@ -35,6 +35,15 @@ class SaveController extends Controller
 
         $em->flush();
 
+        $emptyVals = $this->getContentManager()->getEmptyVals();
+
+        if(!empty($emptyVals)){
+            return new JsonResponse(array(
+                'status'    => 'partial',
+                'emptyVals' => $emptyVals
+            ), 206);
+        }
+
         return new JsonResponse(array(
             'status' => 'ok',
         ), 200);
