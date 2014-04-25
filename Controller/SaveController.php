@@ -26,12 +26,11 @@ class SaveController extends Controller
             ), 400);
         }
 
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $texts = json_decode($json, true);
 
-        $this->get('arcana.content.manager')
-                ->updateTexts($texts);
+        $this->getContentManager()->updateTexts($texts);
 
         $em->flush();
 
@@ -48,4 +47,13 @@ class SaveController extends Controller
             'status' => 'ok',
         ), 200);
     }
+
+    /**
+     * @return ContentManager
+     */
+    private function getContentManager()
+    {
+        return $this->get('arcana.content.manager');
+    }
+
 }
