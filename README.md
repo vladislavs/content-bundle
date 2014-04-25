@@ -117,6 +117,30 @@ Example:
 {{ 'Welcome to the Arcana Content Bundle!' | content('default_page_title', { editable_separately: true, type: 'plaintext' }) }}
 </pre>
 
+You can also use large text blocks (also with html tags) without using a default value, for example:
+<pre>
+<code>
+{% content of "facts_text" %}
+    <h1>This is the main heading</h1>
+    <div id="main-wrapper">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus massa et dui tempor facilisis. In a luctus erat. Morbi eget tellus fermentum, pretium arcu sed, congue arcu. 
+        </p>
+    </div>
+{% endcontent %}
+</code>
+</pre>
+
+Separately editable texts
+<pre>
+{{ 'You can edit me separately' | content('separate_title_tag', { editable_separately: true, type: 'plaintext' }) }}
+</pre>
+Separately editable texts are texts, that are not visible on the page, for example <img> "title" tag. You can edit them by opening "Separately editable contents" popup.
+
+Options available:
+'editable_separately' - if 'true', will be editable in separately editable contents popup
+'type': 'plaintext'/'block'/'inline'/'anchor' - NEED DESCRIPTION
+
 Contributing
 ------------
 
