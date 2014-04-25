@@ -100,10 +100,22 @@ access_control:
     - { path: ^/save, roles: ROLE_ADMIN }
 </pre>
 
+Finally run app/console doctrine:schema:update --force to create 'content' table in your database.
+
 Usage
 -------------
 
-Description here.
+In order to use the bundle, all texts you want to be able to edit, must be added to template with content filter in such format:
+<pre>
+{{ 'default value' | content('name', {options}) }}
+</pre>
+'default value' is the default text, that will appear if no content is found in database.
+'name' is the name of content in the content table.
+'options' - array of options (listed below).
+Example:
+<pre>
+{{ 'Welcome to the Arcana Content Bundle!' | content('default_page_title', { editable_separately: true, type: 'plaintext' }) }}
+</pre>
 
 Contributing
 ------------
