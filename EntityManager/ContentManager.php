@@ -22,6 +22,8 @@ class ContentManager
      */
     private $requests;
 
+    private $emptyVals;
+
     /**
      * @DI\InjectParams
      *
@@ -32,6 +34,7 @@ class ContentManager
     {
         $this->repository = $em->getRepository('ArcanaContentBundle:Content');
         $this->requests = $request_stack;
+        $this->emptyVals = array();
     }
 
     /**
@@ -42,7 +45,12 @@ class ContentManager
         $contents = $this->repository->findById(array_keys($texts));
 
         foreach ($contents as $content) {
-            $content->setText(str_replace('<s></s>', '', $texts[$content->getId()]));
+            $sanitizedText = str_replace('<s></s>', '', $texts[$content->getId()]);
+            if(!empty(strip_tags($sanitizedText))){
+                $content->setText($sanitizedText);
+            }else{
+                $this->emptyVals[] = $content->getId();
+            }
         }
     }
 
@@ -77,5 +85,14 @@ class ContentManager
         }
 
         return $content;
+    }
+
+    /**
+     * Returns empty value list
+     * @return array
+     */
+    public function getEmptyVals()
+    {
+        return $this->emptyVals;
     }
 }
