@@ -119,7 +119,7 @@ Example:
 
 You can also use large text blocks (also with html tags) without using a default value, for example:
 <pre>
-<code>
+
 {% content of "facts_text" %}
     <h1>This is the main heading</h1>
     <div id="main-wrapper">
@@ -128,7 +128,7 @@ You can also use large text blocks (also with html tags) without using a default
         </p>
     </div>
 {% endcontent %}
-</code>
+
 </pre>
 
 Separately editable texts
