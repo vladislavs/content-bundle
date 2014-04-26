@@ -25,10 +25,12 @@ class ContentManager
     private $emptyVals;
 
     /**
-     * @DI\InjectParams
-     *
      * @param EntityManager $em
      * @param RequestStack $request_stack
+     * 
+     * @DI\InjectParams({
+     *     "em" = @DI\Inject("doctrine.orm.entity_manager")
+     * })
      */
     public function __construct(EntityManager $em, RequestStack $request_stack = null)
     {
