@@ -23,7 +23,7 @@ class SeparatelyEditableContentListener implements EventSubscriberInterface
     /**
      * @DI\InjectParams({
      *     "twig"=@DI\Inject("twig"),
-     *     "security"=@DI\Inject("security"),
+     *     "security"=@DI\Inject("security.context"),
      *     "extension"=@DI\Inject("arcana.content.twig.content_extension")
      * })
      *
