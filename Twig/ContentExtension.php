@@ -34,7 +34,7 @@ class ContentExtension extends \Twig_Extension
     /**
      * @DI\InjectParams({
      *     "manager"=@DI\Inject("arcana.content.manager"),
-     *     "security"=@DI\Inject("security")
+     *     "security"=@DI\Inject("security.context")
      * })
      *
      * @param ContentManager $manager
