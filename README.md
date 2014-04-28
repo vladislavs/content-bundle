@@ -93,6 +93,11 @@ In base template file include stylesheets and javascripts for only users with RO
 {% endif %}
 </pre>
 
+Put somewhere in your base template
+<pre>
+window.arcana_content_manager.contentSaveUrl = '{{ path('arcana_content_save') }}';
+</pre>
+
 In your security.yml file restrict access for arcana_content_save path only to administrators.
 <pre>
 access_control:
