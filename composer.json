@@ -1,9 +1,9 @@
 {
-    "name": "arcanacode/content-bundle",
+    "name": "vladislavs/content-bundle",
     "type": "symfony-bundle",
     "description": "This bundle provides localized content management",
-    "keywords": ["arcana", "content", "bundle", "symfony", "twig"],
-    "homepage": "http://github.com/arcanacode/content-bundle",
+    "keywords": ["vladislavs", "content", "bundle", "symfony", "twig"],
+    "homepage": "http://github.com/vladislavs/content-bundle",
     "license": "MIT",
     "minimum-stability": "stable",
     "authors": [
